@@ -1,0 +1,21 @@
+extends ../layout
+
+block content
+  h1.
+    #{title}
+  p
+    a(href='/users/new') new  
+  ul
+    - each user, i in users
+      li
+        = user.name
+        = user.created
+        = user._id
+        form(action='/users/#{user._id}/edit', method='post', enctype='application/x-www-fomr-urlencoded')
+          input(type='hidden', value='DELETE', name='_method')
+          button(type ='submit').
+              Delete 
+        p
+          a(href='/users/#{user._id}/edit') edit
+        p 
+          a(href='/users/#{user._id}') Show

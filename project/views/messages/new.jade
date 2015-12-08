@@ -1,0 +1,18 @@
+extends ../layout
+
+block content
+  h1.
+    #{title}
+  p
+    a(href='/messages') voltar  
+  
+  form#formAdBlob(name="addmessage", method="post", action="/messages")
+    p Name:
+      input#inputName(type="text", placeholder="ex. John Smith", name="name")
+    p Text:
+      input#inputText(type="text", placeholder="ex. Message", name="text")
+    p Date:
+      input#inputDate(type="date", name="mdate")
+    p
+      button#btnSubmit(type="submit") submit
+      

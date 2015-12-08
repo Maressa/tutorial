@@ -1,0 +1,11 @@
+extends ../layout
+
+block content
+  h1
+      Infophoto #{message._id}
+    p Name: #{message.name}
+    p Text: #{message.text}
+    p Date: #{message.date}
+    
+  p
+    a(href='/messages') all my messages 

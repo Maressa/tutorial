@@ -1,0 +1,16 @@
+extends ../layout
+
+block contend
+  h1.
+    User ID #{user._id}
+  
+  form(action='/users/#{user._id}/edit', method='post', name='updateuser', enctype='application/x-www-form-urlenconded')
+    p Name:
+      input#inputName(type='text', value='#{message.name}', name='name')
+    p Created:
+      input#inputDate(type='date', value='#{ucreated}', name='created')
+    p 
+      input(type='hidden', value='PUT', name='_method')
+    p
+      button#btnSubmit(type='submit').
+          Update 

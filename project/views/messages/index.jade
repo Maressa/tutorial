@@ -1,0 +1,22 @@
+extends ../layout
+
+block content
+  h1.
+    #{title}
+  p
+    a(href='/messages/new') new  
+  ul
+    - each message, i in messages
+      li
+        = message.name
+        = message.text
+        = message.date
+        = message._id
+        form(action='/messages/#{message._id}/edit', method='post', enctype='application/x-www-fomr-urlencoded')
+          input(type='hidden', value='DELETE', name='_method')
+          button(type ='submit').
+              Delete 
+        p
+          a(href='/messages/#{message._id}/edit') edit
+        p 
+          a(href='/messages/#{message._id}') Show

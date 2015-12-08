@@ -1,0 +1,15 @@
+extends ../layout
+
+block content
+  h1.
+    #{title}
+  p
+    a(href='/users') View All Users
+  
+  form#formAdUser(name="adduser", method="post", action="/users")
+    p Name:
+      input#inputName(type="text", placeholder="ex. John Smith", name="name")
+    p Date:
+      input#inputCreated(type="date", name="created")
+    p
+      button#btnSubmit(type="submit") submit

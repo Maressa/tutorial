@@ -1,0 +1,17 @@
+extends ../layout
+
+block content
+  h1.
+    Message ID #{message._id}
+  form(action='/messages/#{message._id}/edit', method='post', name='updateblob', enctype='application/x-www-form-urlenconded')
+    p Name:
+      input#inputName(type='text', value='#{message.name}', name='name')
+    p Text:
+      input#inputText(type='text', value='#{message.text}', name='text')
+    p Date:
+      input#inputDate(type='date', value='#{mdate}', name='date')
+    p 
+      input(type='hidden', value='PUT', name='_method')
+    p
+      button#btnSubmit(type='submit').
+          Update 
